@@ -1,7 +1,12 @@
 import React from 'react'
 import Nav from './Nav'
+import Thumbnail from './Thumbnail'
 
 class Confirm extends React.Component {
+	state = { places : [
+		{background: 'https://q-ak.bstatic.com/images/hotel/max1024x768/186/186223203.jpg', type: "Entire Villa • 7 Rooms", title: "Luxury Villa Indu Siam", price: "$200/night", reviews: "12 reviews" } ]
+	}
+
 	render () {
 		return (
 			<div>
@@ -9,26 +14,8 @@ class Confirm extends React.Component {
 				<div class="grid medium">
 					<div class="grid sidebar-left">
 						<div class="sidebar">
-							<div class="card link">
-								<div class="image" style={{backgroundImage: "url('https://q-ak.bstatic.com/images/hotel/max1024x768/186/186223203.jpg')"}}>
-									<button class="icon">
-										<i class="far fa-heart"></i>
-									</button>
-								</div>
-								<div class="content">
-									<small class="meta">Entire Villa • 7 Rooms</small>
-									<h2>Luxury Villa Indu Siam</h2>
-									<span class="price">$350/night</span>
-									<span class="rating">
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-										<i class="far fa-star"></i>
-										<span>37 Reviews</span>
-									</span>
-								</div>
-							</div>
+							{this.state.places.map((place, index) => {return  (<Thumbnail key={index} place={place} />)})}
+
 						</div>
 						<div class="content">
 							<h2>Confirm Booking</h2>

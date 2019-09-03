@@ -1,8 +1,15 @@
 import React from 'react'
 import Nav from './Nav'
 import Sidebar from './Sidebar'
+import Thumbnail from './Thumbnail'
 
 class Favorites extends React.Component {
+	state = { places : [
+		{background: 'https://q-ak.bstatic.com/images/hotel/max1024x768/186/186223203.jpg', type: "Entire Villa • 7 Rooms", title: "Luxury Villa Indu Siam", price: "$200/night", reviews: "12 reviews" },
+		{background: 'https://q-ak.bstatic.com/images/hotel/max1024x768/186/186223203.jpg',type: "Entire Villa • 2 Rooms", title: "Luxury Hotel Indu Siam", price: "$150/night", reviews: "5 reviews" }]
+	}
+
+
 	render () {
 		return (
 			<div>
@@ -13,30 +20,7 @@ class Favorites extends React.Component {
 				<div className="content">
 					<h2>My Favorites</h2>
 					<div className="grid two">
-						<a className="card link" href="place.html">
-							<div className="image" style={{backgroundImage: "url('https://q-ak.bstatic.com/images/hotel/max1024x768/186/186223203.jpg')"}}>
-								<button className="icon">
-									<i className="fas fa-heart"></i>
-								</button>
-							</div>
-							<div className="content">
-								<small className="meta">Entire Villa • 3 Rooms</small>
-								<h2>Luxury Villa Indu Siam</h2>
-								<small className="location">
-									<i className="fas fa-map-marker-alt"></i>
-									<span>Koh Samui, Thailand</span>
-								</small>
-								<span className="price">$198/night</span>
-								<span className="rating">
-									<i className="fas fa-star"></i>
-									<i className="fas fa-star"></i>
-									<i className="fas fa-star"></i>
-									<i className="fas fa-star"></i>
-									<i className="far fa-star"></i>
-									<span>29 Reviews</span>
-								</span>
-							</div>
-						</a>
+								{this.state.places.map((place, index) => {return  (<Thumbnail key={index} place={place} />)})}
 					</div>
 				</div>
 			</div>

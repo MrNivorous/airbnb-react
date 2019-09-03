@@ -2,7 +2,6 @@ import React from 'react'
 import Nav from './Nav'
 import Filter from './Filter'
 import Thumbnail from './Thumbnail'
-import PlaceGrid from './PlaceGrid'
 
 class Places extends React.Component {
 	state = { places : [
