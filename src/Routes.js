@@ -8,6 +8,7 @@ import Confirm from './components/Confirm'
 import Create from './components/Create'
 import Favorites from './components/Favorites'
 import Host from './components/Host'
+import Profile from './components/Profile'
 import './styles/buttons.css'
 import './styles/cards.css'
 import './styles/filters.css'
@@ -33,6 +34,7 @@ class Routes extends React.Component {
 					<Route path='/signup' component={Signup} />
 					<Route path='/login' component={Login} />
 					<Route path='/host' component={Host} />
+					<Route path='/profile' component={Profile} />
 					<Route path='/favorites' component={Favorites} />
 					<Route path='/bookings' component={Bookings} />
 					<Route path='/create' component={Create} />

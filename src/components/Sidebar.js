@@ -7,7 +7,7 @@ class Sidebar extends React.Component {
 				<div className="sidebar">
 					<ul>
 						<li className="">
-							<Link to="profile.html">Profile</Link>
+							<Link to="/profile">Profile</Link>
 						</li>
 						<li className="">
 							<Link to="/bookings">Bookings</Link>
