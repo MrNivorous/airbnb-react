@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-class Signup extends React.Component {
+class Login extends React.Component {
 	render () {
 		return (
 			<div className="grid center middle tall image">
@@ -10,10 +10,6 @@ class Signup extends React.Component {
 						<div className="logo" style={{ backgroundImage: `url(${"./images/logo-airbnb.png"})` }}></div>
 						<form>
 							<div className="group">
-								<label>Name</label>
-								<input type="text"></input>
-							</div>
-							<div className="group">
 								<label>Email</label>
 								<input type="email"></input>
 							</div>
@@ -21,18 +17,10 @@ class Signup extends React.Component {
 								<label>Password</label>
 								<input type="password"></input>
 							</div>
-							<div className="group">
-								<label>Location</label>
-								<input type="text"></input>
-							</div>
-							<div className="group">
-								<label>Profile Picture</label>
-								<input type="file" />
-							</div>
-							<button className="primary">Signup</button>
+							<button className="primary">Login</button>
 						</form>
 						<p className="footer">
-							Already have an account? <Link to="/login">Login</Link>
+							New to Airbnb? <Link to="/signup">Signup</Link>
 						</p>
 					</div>
 				</div>
@@ -41,4 +29,4 @@ class Signup extends React.Component {
 	}
 }
 
-export default Signup;
+export default Login
