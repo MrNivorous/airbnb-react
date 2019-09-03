@@ -9,18 +9,19 @@ import Create from './components/Create'
 import Favorites from './components/Favorites'
 import Host from './components/Host'
 import Profile from './components/Profile'
+import Place from './components/Place'
 import './styles/buttons.css'
 import './styles/cards.css'
 import './styles/filters.css'
 import './styles/forms.css'
-// import './styles/gallery.css'
+import './styles/gallery.css'
 import './styles/global.css'
 import './styles/grid.css'
-// import './styles/icons.css'
+import './styles/icons.css'
 import './styles/nav.css'
-// import './styles/reviews.css'
+import './styles/reviews.css'
 import './styles/sidebar.css'
-// import './styles/users.css'
+import './styles/users.css'
 
 
 
@@ -34,6 +35,7 @@ class Routes extends React.Component {
 					<Route path='/signup' component={Signup} />
 					<Route path='/login' component={Login} />
 					<Route path='/host' component={Host} />
+					<Route path='/place' component={Place} />
 					<Route path='/profile' component={Profile} />
 					<Route path='/favorites' component={Favorites} />
 					<Route path='/bookings' component={Bookings} />
