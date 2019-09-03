@@ -23,7 +23,7 @@
 	background: #f5f4f4;
 }
 
-.sidebar ul li.active a {
+.sidebar ul li a.active {
 	background: #00988f;
 	color: white;
 }
