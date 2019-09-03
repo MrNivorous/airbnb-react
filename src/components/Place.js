@@ -4,6 +4,14 @@ import Gallery from './Gallery'
 import Review from './Review'
 
 class Place extends React.Component {
+	state = { reviews : [
+		{avatar: 'https://upload.wikimedia.org/wikipedia/en/5/5c/Ol%27_Dirty_Bastard.jpg', date: "27 July 2019", name: "ODB", review: "Ooo baby I like it raw" },
+
+		{avatar: 'https://upload.wikimedia.org/wikipedia/commons/6/64/50_Cent.jpg', date: "22 Aug 2019", name: "50 Cent", review: "P.I.M.P." },
+
+		{avatar: 'https://upload.wikimedia.org/wikipedia/commons/0/0f/Kanye_West_at_the_2009_Tribeca_Film_Festival-2_%28cropped%29.jpg', date: "14 May 2019", name: "Kanye", review: "I liked that old Kanye better" } ]
+	}
+
 	render () {
 		return (
 		<div>
@@ -90,7 +98,24 @@ class Place extends React.Component {
 					</div>
 				</div>
 			</div>
-			<Review />
+			<div className="reviews">
+				<h2>4 Reviews</h2>
+				<form>
+					<div className="group">
+						<label>Leave a review</label>
+						<textarea></textarea>
+						<div className="rating">
+							<i className="far fa-star"></i>
+							<i className="far fa-star"></i>
+							<i className="far fa-star"></i>
+							<i className="far fa-star"></i>
+							<i className="far fa-star"></i>
+						</div>
+						<button className="primary small">Submit</button>
+					</div>
+				</form>
+			{this.state.reviews.map((review, index) => {return  (<Review key={index} review={review} />)})}
+			</div>
 			</div>
 
 		</div>

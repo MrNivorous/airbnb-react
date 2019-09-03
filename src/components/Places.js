@@ -3,6 +3,7 @@ import Nav from './Nav'
 import Filter from './Filter'
 import Thumbnail from './Thumbnail'
 
+
 class Places extends React.Component {
 	state = { places : [
 		{background: 'https://q-ak.bstatic.com/images/hotel/max1024x768/186/186223203.jpg', type: "Entire Villa • 7 Rooms", title: "Luxury Villa Indu Siam", price: "$200/night", reviews: "12 reviews" },
