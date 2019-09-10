@@ -32,6 +32,9 @@ class Thumbnail extends React.Component {
 =======
 					{this.props.place.location ? <small className="location">
 >>>>>>> parent of d655e3a... need to fix gallery
+=======
+					{this.props.place.location ? <small className="location">
+>>>>>>> parent of d655e3a... need to fix gallery
 															<i className="fas fa-map-marker-alt"></i>
 															<span>{this.props.place.city}</span>
 														</small> : null}
