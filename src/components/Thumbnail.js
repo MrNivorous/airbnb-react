@@ -20,6 +20,7 @@ class Thumbnail extends React.Component {
 					<small className="meta">{this.props.place.type}</small>
 					<h2>{this.props.place.title}</h2>
 <<<<<<< HEAD
+<<<<<<< HEAD
 						{this.props.place.city ? <small className="location">
 =======
 					{this.props.place.location ? <small className="location">
