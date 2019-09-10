@@ -12,11 +12,11 @@ class Places extends React.Component {
 }
 
 componentWillMount() {
+	let originalPlaces = this.state.places
 	axios.get('http://localhost:4000/places')
 	.then(res => {
 		this.setState({
 			places: res.data,
-			originalPlaces: this.state.places
 	})
 	})
 	.catch(err => {})
@@ -27,14 +27,17 @@ componentWillMount() {
 	})
 	})
 	.catch(err => {})
+	this.setState({
+		originalPlaces: originalPlaces
+	})
 }
 
 
-// search = (event) => {
-//  let filteredPlaces = this.state.originalPlaces.filter(p =>  p.title.toLowerCase().includes(event.target.value.toLowerCase()))
-//  this.setState({
-// 	 places: filteredPlaces})
-// }
+search = (event) => {
+ let filteredPlaces = this.state.originalPlaces.filter(p =>  p.title.includes(event.target.value))
+ this.setState({
+	 places: filteredPlaces})
+}
 
 
 
@@ -72,9 +75,9 @@ componentWillMount() {
 				</select>
 				<input type="text" onChange={this.search} className="search" placeholder="Search..." />
 			</div>
-
+			<div class="grid five large">
 			{this.state.places.map((place, index) => {return  (<Thumbnail key={index} place={place} />)})}
-
+			</div>
 		</div>
 		)
 	}

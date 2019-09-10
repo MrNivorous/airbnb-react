@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // import React from 'react'
 //
 // class Gallery extends React.Component {
@@ -27,7 +26,7 @@
 // }
 //
 // export default Gallery
-=======
+
 import React from 'react'
 
 class Gallery extends React.Component {
@@ -56,4 +55,3 @@ class Gallery extends React.Component {
 }
 
 export default Gallery
->>>>>>> parent of d655e3a... need to fix gallery
