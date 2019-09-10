@@ -19,7 +19,11 @@ class Thumbnail extends React.Component {
 				<div className="content">
 					<small className="meta">{this.props.place.type}</small>
 					<h2>{this.props.place.title}</h2>
+<<<<<<< HEAD
 						{this.props.place.city ? <small className="location">
+=======
+					{this.props.place.location ? <small className="location">
+>>>>>>> parent of d655e3a... need to fix gallery
 															<i className="fas fa-map-marker-alt"></i>
 															<span>{this.props.place.city}</span>
 														</small> : null}
@@ -31,7 +35,7 @@ class Thumbnail extends React.Component {
 						<i className="fas fa-star"></i>
 						<i className="far fa-star"></i>
 						<span>{this.props.place.reviews}</span>
-						{this.props.place.date ? <span className="date">{this.props.place.date}</span> : null}
+						{this.props.place.date ? <span className="date">18 Apr 2019 - 27 Apr 2019</span> : null}
 
 					</span>
 				</div>

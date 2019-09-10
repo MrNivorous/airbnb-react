@@ -4,32 +4,19 @@ import Gallery from './Gallery'
 import Review from './Review'
 
 class Place extends React.Component {
-	state = { mainImage: [{image: 'https://q-ak.bstatic.com/images/hotel/max1024x768/186/186223203.jpg'}],
-		gallery: [
-		{background: 'https://q-ak.bstatic.com/images/hotel/max1024x768/186/186223203.jpg'},
-		{background: 'https://q-ak.bstatic.com/images/hotel/max1280x900/186/186223171.jpg'},
-		{background: 'https://q-ak.bstatic.com/images/hotel/max1280x900/186/186223174.jpg'},		{background: 'https://q-ak.bstatic.com/images/hotel/max1280x900/186/186223178.jpg'},		{background: 'https://q-ak.bstatic.com/images/hotel/max1280x900/186/186223180.jpg'},		{background: 'https://q-ak.bstatic.com/images/hotel/max1280x900/186/186223186.jpg'},
-		{background: 'https://q-ak.bstatic.com/images/hotel/max1280x900/186/186223190.jpg'},
-		{background: 'https://q-ak.bstatic.com/images/hotel/max1280x900/186/186223195.jpg'},
-		{background: 'https://q-ak.bstatic.com/images/hotel/max1280x900/186/186223199.jpg'},
-	],
-		reviews : [
-			{avatar: 'https://upload.wikimedia.org/wikipedia/en/5/5c/Ol%27_Dirty_Bastard.jpg', date: "27 July 2019", name: "ODB", review: "Ooo baby I like it raw" },
+	state = { reviews : [
+		{avatar: 'https://upload.wikimedia.org/wikipedia/en/5/5c/Ol%27_Dirty_Bastard.jpg', date: "27 July 2019", name: "ODB", review: "Ooo baby I like it raw" },
 
-			{avatar: 'https://upload.wikimedia.org/wikipedia/commons/6/64/50_Cent.jpg', date: "22 Aug 2019", name: "50 Cent", review: "P.I.M.P." },
+		{avatar: 'https://upload.wikimedia.org/wikipedia/commons/6/64/50_Cent.jpg', date: "22 Aug 2019", name: "50 Cent", review: "P.I.M.P." },
 
-			{avatar: 'https://upload.wikimedia.org/wikipedia/commons/0/0f/Kanye_West_at_the_2009_Tribeca_Film_Festival-2_%28cropped%29.jpg', date: "14 May 2019", name: "Kanye", review: "I liked that old Kanye better" } ]
+		{avatar: 'https://upload.wikimedia.org/wikipedia/commons/0/0f/Kanye_West_at_the_2009_Tribeca_Film_Festival-2_%28cropped%29.jpg', date: "14 May 2019", name: "Kanye", review: "I liked that old Kanye better" } ]
 	}
 
 	render () {
 		return (
 		<div>
 			<Nav />
-
-			{this.state.mainImage.map((main, index) => {return  (<Gallery key={index} main={main} />)})}
-{
-			// {this.state.gallery.map((bg, index) => {return  (<Gallery key={index} bg={bg} />)})}
-}
+			<Gallery />
 			<div className="grid medium">
 				<div className="grid sidebar-right">
 					<div className="content">
