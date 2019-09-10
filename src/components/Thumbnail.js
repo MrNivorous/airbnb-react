@@ -21,7 +21,11 @@ class Thumbnail extends React.Component {
 					<h2>{this.props.place.title}</h2>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 						{this.props.place.city ? <small className="location">
+=======
+					{this.props.place.location ? <small className="location">
+>>>>>>> parent of d655e3a... need to fix gallery
 =======
 					{this.props.place.location ? <small className="location">
 >>>>>>> parent of d655e3a... need to fix gallery
