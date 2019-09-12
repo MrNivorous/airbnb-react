@@ -6,10 +6,10 @@ class Review extends React.Component {
 				<div className="card review">
 					<div className="content">
 						<div className="user">
-							<div className="avatar" style={{backgroundImage: `url(${this.props.review.avatar})`}}></div>
+							<div className="avatar" style={{backgroundImage: `url(${this.props.reviews.avatar})`}}></div>
 							<div className="name">
-								<small>{this.props.review.date}</small>
-								<span>{this.props.review.name}</span>
+								<small>{this.props.reviews.date}</small>
+								<span>{this.props.reviews.name}</span>
 							</div>
 						</div>
 						<div className="rating">
@@ -19,7 +19,7 @@ class Review extends React.Component {
 							<i className="fas fa-star"></i>
 							<i className="fas fa-star"></i>
 						</div>
-						<p>{this.props.review.review}</p>
+						<p>{this.props.reviews.review}</p>
 					</div>
 				</div>
 		)

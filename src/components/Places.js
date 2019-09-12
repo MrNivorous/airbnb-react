@@ -11,12 +11,13 @@ class Places extends React.Component {
 	types: []
 }
 
+
 componentWillMount() {
-	let originalPlaces = this.state.places
 	axios.get('http://localhost:4000/places')
 	.then(res => {
 		this.setState({
 			places: res.data,
+			originalPlaces: res.data
 	})
 	})
 	.catch(err => {})
@@ -27,14 +28,11 @@ componentWillMount() {
 	})
 	})
 	.catch(err => {})
-	this.setState({
-		originalPlaces: originalPlaces
-	})
 }
 
 
 search = (event) => {
- let filteredPlaces = this.state.originalPlaces.filter(p =>  p.title.includes(event.target.value))
+ let filteredPlaces = this.state.places.filter(p =>  p.title.toLowerCase().includes(event.target.value.toLowerCase()))
  this.setState({
 	 places: filteredPlaces})
 }

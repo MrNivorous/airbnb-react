@@ -19,7 +19,7 @@ class Thumbnail extends React.Component {
 					<h2>{this.props.place.title}</h2>
 						{this.props.place.city ? <small className="location">
 															<i className="fas fa-map-marker-alt"></i>
-															<span>{this.props.place.city}</span>
+															<span>{this.props.place.city}, {this.props.place.country}</span>
 														</small> : null}
 					<span className="price">${this.props.place.price}</span>
 					<span className="rating">

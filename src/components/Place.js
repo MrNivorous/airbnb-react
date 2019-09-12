@@ -2,21 +2,42 @@ import React from 'react'
 import Nav from './Nav'
 import Gallery from './Gallery'
 import Review from './Review'
+import axios from 'axios'
+
 
 class Place extends React.Component {
-	state = { reviews : [
-		{avatar: 'https://upload.wikimedia.org/wikipedia/en/5/5c/Ol%27_Dirty_Bastard.jpg', date: "27 July 2019", name: "ODB", review: "Ooo baby I like it raw" },
+	state = {
+		place: {
+			images: [],
+			amenities: [],
+			type: {},
+			host: {},
+			reviews: []
+			},
+		selected: '',
+		review: ''
+	}
 
-		{avatar: 'https://upload.wikimedia.org/wikipedia/commons/6/64/50_Cent.jpg', date: "22 Aug 2019", name: "50 Cent", review: "P.I.M.P." },
+	componentWillMount() {
+		axios.get('http://localhost:4000/places/5d761a65a7e1e234cd692283')
+		.then(res => {
+			this.setState({
+				place: res.data,
+				selected: res.data.images[0],
+		})
+	})}
 
-		{avatar: 'https://upload.wikimedia.org/wikipedia/commons/0/0f/Kanye_West_at_the_2009_Tribeca_Film_Festival-2_%28cropped%29.jpg', date: "14 May 2019", name: "Kanye", review: "I liked that old Kanye better" } ]
+	changeSelected = (selected) => {
+		this.setState({
+			selected: selected
+		})
 	}
 
 	render () {
 		return (
 		<div>
 			<Nav />
-			<Gallery />
+			<Gallery selected={this.state.selected} images={this.state.place.images} changeSelected={this.changeSelected} />
 			<div className="grid medium">
 				<div className="grid sidebar-right">
 					<div className="content">
@@ -42,7 +63,7 @@ class Place extends React.Component {
 								</ul>
 							</div>
 						</div>
-						<p>Stylish, tropical, luxurious, airy and absolute beach front, this villa combines form and function, enjoying magnificent views of Samui’s small islands and the sea beyond. With 520sqm of indoor/outdoor living space with 5 ensuite bedrooms, large living area, beachfront infinity pool, garden, air conditioned gym, professional pool table, bbq and Sala, this villa is perfect for up to 10 adults With 260sqm (2798sqfeet) of living space and 250sqm (2,700sqfeet) of outdoor space.</p>
+						<p></p>
 						<h3>Amenities</h3>
 						<div className="card specs">
 							<div className="content">
@@ -114,7 +135,8 @@ class Place extends React.Component {
 						<button className="primary small">Submit</button>
 					</div>
 				</form>
-			{this.state.reviews.map((review, index) => {return  (<Review key={index} review={review} />)})}
+
+
 			</div>
 			</div>
 
@@ -126,3 +148,5 @@ class Place extends React.Component {
 }
 
 export default Place
+
+						// {this.state.place.reviews.map((review, index) => {return  (<Review key={index} review={review} />)})}
