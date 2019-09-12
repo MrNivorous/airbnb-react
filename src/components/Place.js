@@ -135,7 +135,7 @@ class Place extends React.Component {
 						<button className="primary small">Submit</button>
 					</div>
 				</form>
-
+						{this.state.place.reviews.map((review, index) => {return  (<Review key={index} review={review} />)})}
 
 			</div>
 			</div>
@@ -148,5 +148,3 @@ class Place extends React.Component {
 }
 
 export default Place
-
-						// {this.state.place.reviews.map((review, index) => {return  (<Review key={index} review={review} />)})}
