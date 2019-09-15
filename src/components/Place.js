@@ -21,16 +21,25 @@ class Place extends React.Component {
 	componentWillMount() {
 		axios.get('http://localhost:4000/places/5d761a65a7e1e234cd692283')
 		.then(res => {
+			// console.log(res.data)
 			this.setState({
 				place: res.data,
-				selected: res.data.images[0],
-		})
-	})}
+				selected: res.data.images[0]
+	})
+	console.log(res.data.amenities)
+})}
+
+
 
 	changeSelected = (selected) => {
 		this.setState({
 			selected: selected
-		})
+	})}
+
+
+	selectGuests = (e) => {
+		let guests = Number(e.target.value[0])
+		this.setState({guests})
 	}
 
 	render () {
@@ -41,10 +50,10 @@ class Place extends React.Component {
 			<div className="grid medium">
 				<div className="grid sidebar-right">
 					<div className="content">
-						<h1>Luxury Villa Indu Siam</h1>
+						<h1>{this.state.place.title}</h1>
 						<small>
 							<i className="fas fa-map-marker-alt"></i>
-							<span>Koh Samui, Thailand</span>
+							<span>{this.state.place.city},{this.state.place.country}</span>
 						</small>
 						<div className="user">
 							<div className="avatar" style={{backgroundImage: "url('https://randomuser.me/api/portraits/women/2.jpg')"}}></div>
@@ -68,13 +77,7 @@ class Place extends React.Component {
 						<div className="card specs">
 							<div className="content">
 								<ul className="grid two">
-									<li><i className="fas fa-utensils"></i>Kitchen</li>
-									<li><i className="fas fa-dumbbell"></i>Gym</li>
-									<li><i className="fas fa-dumbbell"></i>Wi-Fi</li>
-									<li><i className="fas fa-tshirt"></i>Iron</li>
-									<li><i className="fas fa-swimmer"></i>Swimming Pool</li>
-									<li><i className="fas fa-wind"></i>Air Conditioning</li>
-									<li><i className="fas fa-tv"></i>TV</li>
+									{this.state.place.amenities.map((e, i) => <li key={i}><i className={`fas fa-$(e.icon)`}></i>{e.name}</li>)}
 								</ul>
 							</div>
 						</div>
@@ -99,17 +102,9 @@ class Place extends React.Component {
 							</div>
 							<div className="group">
 								<label>Guests</label>
-								<select>
-									<option>1 guest</option>
-									<option>2 guests</option>
-									<option>3 guests</option>
-									<option>4 guests</option>
-									<option>5 guests</option>
-									<option>6 guests</option>
-									<option>7 guests</option>
-									<option>8 guests</option>
-									<option>9 guests</option>
-									<option>10 guests</option>
+								<select onChange={this.selectGuests}>
+									{[...Array(this.state.place.guests)].map((e, i) => <option key={i}>{i === 0 ?'1 guest' :`${i + 1} guests`}</option>)}
+
 								</select>
 							</div>
 							<div className="group">
@@ -135,7 +130,7 @@ class Place extends React.Component {
 						<button className="primary small">Submit</button>
 					</div>
 				</form>
-						{this.state.place.reviews.map((review, index) => {return  (<Review key={index} review={review} />)})}
+				{this.state.place.reviews.map((review, i) => <Review key={i} review={review} />)}
 
 			</div>
 			</div>
