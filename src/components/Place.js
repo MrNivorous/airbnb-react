@@ -3,6 +3,10 @@ import Nav from './Nav'
 import Gallery from './Gallery'
 import Review from './Review'
 import axios from 'axios'
+import DatePicker from "react-datepicker"
+import 'react-datepicker/dist/react-datepicker.css';
+
+
 
 
 class Place extends React.Component {
@@ -15,7 +19,8 @@ class Place extends React.Component {
 			reviews: []
 			},
 		selected: '',
-		review: ''
+		review: '',
+		startDate: new Date()
 	}
 
 	componentWillMount() {
@@ -29,6 +34,12 @@ class Place extends React.Component {
 	console.log(res.data.amenities)
 })}
 
+
+handleChange = date => {
+	this.setState({
+		startDate: date
+	});
+};
 
 
 	changeSelected = (selected) => {
@@ -97,8 +108,10 @@ class Place extends React.Component {
 						<form className="small">
 							<div className="group">
 								<label>Dates</label>
-								<input type="text" placeholder="Check-in" />
-								<input type="text" placeholder="Check-out" />
+									<DatePicker selected={this.state.startDate} onChange={this.handleChange}
+										placeholder="Check in"/>
+										<DatePicker selected={this.state.startDate} onChange={this.handleChange}
+											placeholder="Check Out"/>
 							</div>
 							<div className="group">
 								<label>Guests</label>
