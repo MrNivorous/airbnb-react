@@ -2,6 +2,8 @@ import React from 'react'
 import Nav from './Nav'
 import Thumbnail from './Thumbnail'
 import axios from 'axios'
+import {Link} from 'react-router-dom'
+
 
 
 
@@ -73,8 +75,8 @@ search = (event) => {
 				</select>
 				<input type="text" onChange={this.search} className="search" placeholder="Search..." />
 			</div>
-			<div class="grid five large">
-			{this.state.places.map((place, index) => {return  (<Thumbnail key={index} place={place} />)})}
+			<div className="grid five large">
+			{this.state.places.map((place, index) => {return (<Link to={`/place/${place._id}`} key={index}> <Thumbnail key={index} place={place} /> </Link>)})}
 			</div>
 		</div>
 		)

@@ -35,7 +35,7 @@ class Routes extends React.Component {
 					<Route path='/signup' component={Signup} />
 					<Route path='/login' component={Login} />
 					<Route path='/host' component={Host} />
-					<Route path='/place' component={Place} />
+					<Route path={'/place/:id'} component={Place} />
 					<Route path='/profile' component={Profile} />
 					<Route path='/favorites' component={Favorites} />
 					<Route path='/bookings' component={Bookings} />

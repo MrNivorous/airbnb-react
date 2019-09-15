@@ -1,5 +1,4 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
 
 class Thumbnail extends React.Component {
 	render () {
@@ -8,7 +7,7 @@ class Thumbnail extends React.Component {
 		return (
 
 
-			<Link to="/place" className="card link">
+			<div className="card link">
 				<div className="image" style={{backgroundImage: `url(${this.props.place.image})`}}>
 					<button className="icon">
 						<i className="far fa-heart"></i>
@@ -33,7 +32,7 @@ class Thumbnail extends React.Component {
 
 					</span>
 				</div>
-			</Link>
+			</div>
 		)
 	}
 }

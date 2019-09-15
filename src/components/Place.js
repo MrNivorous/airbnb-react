@@ -24,14 +24,14 @@ class Place extends React.Component {
 	}
 
 	componentWillMount() {
-		axios.get('http://localhost:4000/places/5d761a65a7e1e234cd692283')
+		axios.get(`http://localhost:4000/places/${this.props.match.params.id
+}`)
 		.then(res => {
 			// console.log(res.data)
 			this.setState({
 				place: res.data,
 				selected: res.data.images[0]
 	})
-	console.log(res.data.amenities)
 })}
 
 
